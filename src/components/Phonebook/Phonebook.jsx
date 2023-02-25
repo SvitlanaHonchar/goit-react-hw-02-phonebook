@@ -19,6 +19,9 @@ class Phonebook extends Component {
       name: this.state.name,
     };
     console.log(contact);
+
+    this.props.onAddContact(contact);
+    this.setState({ name: '' });
   };
 
   render() {
