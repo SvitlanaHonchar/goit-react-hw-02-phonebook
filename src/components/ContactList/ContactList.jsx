@@ -8,7 +8,11 @@ class ContactList extends Component {
         <h2>Contacts</h2>
         <ul>
           {contacts.map(contact => {
-            return <li key={contact.name}>{contact.name}</li>;
+            return (
+              <li key={contact.name}>
+                {contact.name}: {contact.number}
+              </li>
+            );
           })}
         </ul>
       </div>

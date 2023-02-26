@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Phonebook extends Component {
   state = {
     name: '',
+    number: '',
   };
 
   handleInput = e => {
@@ -17,11 +18,12 @@ class Phonebook extends Component {
 
     const contact = {
       name: this.state.name,
+      number: this.state.number,
     };
     console.log(contact);
 
     this.props.onAddContact(contact);
-    this.setState({ name: '' });
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -39,6 +41,21 @@ class Phonebook extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               placeholder="name"
               value={this.state.name}
+              onChange={this.handleInput}
+              required
+            />
+          </label>
+          <br />
+          <label htmlFor="">
+            <span>Number</span>
+            <br />
+            <input
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              placeholder="number"
+              value={this.state.number}
               onChange={this.handleInput}
               required
             />
