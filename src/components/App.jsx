@@ -11,6 +11,11 @@ class App extends Component {
   };
 
   onAddContact = contact => {
+    if (this.state.contacts.some(c => c.name === contact.name)) {
+      alert('This contact is already in the Phonebook');
+      return false;
+    }
+
     const finalContact = {
       id: nanoid(),
       ...contact,
@@ -18,6 +23,15 @@ class App extends Component {
 
     this.setState({
       contacts: [finalContact, ...this.state.contacts],
+    });
+    return true;
+  };
+
+  onRemoveContact = contactName => {
+    this.setState({
+      contacts: this.state.contacts.filter(
+        contact => contact.name !== contactName
+      ),
     });
   };
 
@@ -33,8 +47,14 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        <Phonebook onAddContact={this.onAddContact} />
-        <ContactList contacts={this.state.contacts} />
+        <Phonebook
+          onAddContact={this.onAddContact}
+          onRemoveContact={this.onRemoveContact}
+        />
+        <ContactList
+          contacts={this.state.contacts}
+          onRemoveContact={this.onRemoveContact}
+        />
       </div>
     );
   }

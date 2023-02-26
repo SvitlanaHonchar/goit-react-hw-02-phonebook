@@ -20,10 +20,12 @@ class Phonebook extends Component {
       name: this.state.name,
       number: this.state.number,
     };
-    console.log(contact);
+    // console.log(contact);
 
-    this.props.onAddContact(contact);
-    this.setState({ name: '', number: '' });
+    const isSuccess = this.props.onAddContact(contact);
+    if (isSuccess) {
+      this.setState({ name: '', number: '' });
+    }
   };
 
   render() {

@@ -11,6 +11,14 @@ class ContactList extends Component {
             return (
               <li key={contact.name}>
                 {contact.name}: {contact.number}
+                <button
+                  onClick={() => {
+                    this.props.onRemoveContact(contact.name);
+                  }}
+                  type="button"
+                >
+                  Remove contact
+                </button>
               </li>
             );
           })}
