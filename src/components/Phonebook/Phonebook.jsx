@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyledForm, StyledBtn } from './PhoneBook.styled';
 
 class Phonebook extends Component {
   state = {
@@ -32,10 +33,9 @@ class Phonebook extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <StyledForm onSubmit={this.handleSubmit}>
           <label htmlFor="">
             <span>Name</span>
-            <br />
             <input
               type="text"
               name="name"
@@ -47,10 +47,8 @@ class Phonebook extends Component {
               required
             />
           </label>
-          <br />
           <label htmlFor="">
             <span>Number</span>
-            <br />
             <input
               type="tel"
               name="number"
@@ -62,9 +60,8 @@ class Phonebook extends Component {
               required
             />
           </label>
-          <br />
-          <button type="submit">Add contact</button>
-        </form>
+          <StyledBtn type="submit">Add contact</StyledBtn>
+        </StyledForm>
       </div>
     );
   }

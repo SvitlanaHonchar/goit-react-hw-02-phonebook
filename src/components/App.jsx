@@ -56,10 +56,12 @@ class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
-          // display: 'flex',
+          // height: '100vh',
+          marginLeft: '20px',
+          display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           fontSize: 30,
           color: '#010101',
         }}

@@ -7,7 +7,7 @@ class Contact extends Component {
 
     return (
       <>
-        {contact.name}: {contact.number}
+        👨🏻‍🦱 {contact.name}: {contact.number}
         <button
           onClick={() => {
             this.props.onRemoveContact(contact.name);
