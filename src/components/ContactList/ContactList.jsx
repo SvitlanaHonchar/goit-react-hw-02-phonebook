@@ -1,8 +1,9 @@
+import Contact from 'components/Contact/Contact';
 import React, { Component } from 'react';
 
 class ContactList extends Component {
   render() {
-    const { contacts } = this.props;
+    const { contacts, onRemoveContact } = this.props;
     return (
       <div>
         <h2>Contacts</h2>
@@ -10,15 +11,7 @@ class ContactList extends Component {
           {contacts.map(contact => {
             return (
               <li key={contact.name}>
-                {contact.name}: {contact.number}
-                <button
-                  onClick={() => {
-                    this.props.onRemoveContact(contact.name);
-                  }}
-                  type="button"
-                >
-                  Remove contact
-                </button>
+                <Contact contact={contact} onRemoveContact={onRemoveContact} />
               </li>
             );
           })}
