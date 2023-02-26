@@ -1,12 +1,12 @@
 import Contact from 'components/Contact/Contact';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ContactList extends Component {
   render() {
     const { contacts, onRemoveContact } = this.props;
     return (
       <div>
-        <h2>Contacts</h2>
         <ul>
           {contacts.map(contact => {
             return (
@@ -22,3 +22,8 @@ class ContactList extends Component {
 }
 
 export default ContactList;
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  onRemoveContact: PropTypes.func,
+};

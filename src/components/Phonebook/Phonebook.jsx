@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Phonebook extends Component {
   state = {
@@ -31,7 +32,6 @@ class Phonebook extends Component {
   render() {
     return (
       <div>
-        <h2>Phonebook</h2>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="">
             <span>Name</span>
@@ -71,3 +71,8 @@ class Phonebook extends Component {
 }
 
 export default Phonebook;
+
+Phonebook.propTypes = {
+  onAddContact: PropTypes.func,
+  onRemoveContact: PropTypes.func,
+};

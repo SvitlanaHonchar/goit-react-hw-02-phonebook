@@ -64,11 +64,13 @@ class App extends Component {
           color: '#010101',
         }}
       >
+        <h2>Phonebook</h2>
         <Phonebook
           onAddContact={this.onAddContact}
           onRemoveContact={this.onRemoveContact}
         />
         <Filter onFilterContacts={this.onFilterContacts} />
+        <h2>Contacts</h2>
         <ContactList
           contacts={filteredContacts}
           onRemoveContact={this.onRemoveContact}

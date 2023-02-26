@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class Contact extends Component {
@@ -21,3 +22,7 @@ class Contact extends Component {
 }
 
 export default Contact;
+
+Contact.propTypes = {
+  contact: PropTypes.object,
+};
